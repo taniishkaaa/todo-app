@@ -1,0 +1,16 @@
+mat-toolbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 64px;
+    a {
+      text-decoration: none;
+      &.active-link {
+        color: #0d6efd;
+        filter: brightness(80%);
+      }
+      span {
+        margin-left: 24px;
+      }
+    }
+  }
+  

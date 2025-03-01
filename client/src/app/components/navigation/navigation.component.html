@@ -1,0 +1,39 @@
+<mat-toolbar color="accent">
+    <span>
+      <a routerLink="/">
+        <span>ToDo App</span>
+      </a>
+    </span>
+    <span>
+      <a
+        *ngIf="isAuthenticated"
+        routerLinkActive="active-link"
+        routerLink="/tasks"
+      >
+        <span>Tasks</span>
+      </a>
+      <a
+        *ngIf="!isAuthenticated"
+        routerLinkActive="active-link"
+        routerLink="/login"
+      >
+        <span>Login</span>
+      </a>
+      <a
+        *ngIf="isAuthenticated"
+        (click)="logout()"
+        routerLinkActive="active-link"
+        routerLink="/login"
+      >
+        <span>Logout</span>
+      </a>
+      <a
+        *ngIf="!isAuthenticated"
+        routerLinkActive="active-link"
+        routerLink="/signup"
+      >
+        <span>Signup</span>
+      </a>
+    </span>
+  </mat-toolbar>
+  

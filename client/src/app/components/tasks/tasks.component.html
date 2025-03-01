@@ -1,0 +1,21 @@
+<app-create-task (create)="createTask()"></app-create-task>
+
+<mat-card *ngFor="let task of tasks$ | async">
+  <div class="task-title">
+    {{ task.title }}
+  </div>
+  <div class="task-meta">
+    {{ task.created | date:'mediumDate' }}
+  </div>
+  <div class="task-body">
+    {{ task.body }}
+  </div>
+  <div class="task-buttons">
+    <button *ngIf="task.user === userId" mat-icon-button>
+      <mat-icon (click)="edit(task.id)" color="warn">create</mat-icon>
+    </button>
+    <button *ngIf="task.user === userId" mat-icon-button>
+      <mat-icon (click)="delete(task.id)" color="warn">delete</mat-icon>
+    </button>
+  </div>
+</mat-card>
